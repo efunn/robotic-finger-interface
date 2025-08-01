@@ -137,7 +137,7 @@ When using predictive gain, it is important to include the safety bounds (i.e. t
 
 Finally, here is sample data from an experiment where movements of the right hand were mirrored to the left hand (safety bounds: 0-10 degrees; press detected at 7 degrees). A 9-press sequence was executed in under 2 seconds, roughly corresponding to a 5Hz movement:
 
-<img src="./media/finger-mirror-data-example.png" alt="Example data from mirrored fast movements" width="400">
+<img src="./media/finger-mirror-data-example.PNG" alt="Example data from mirrored fast movements" width="400">
 
 *In addition to the expected overshooting behavior, we also see an unexpected undershoot after each press. Here, the predictive gain was calculated from the DYNAMIXEL's reported velocity, which uses a 50ms moving average filter internally, causing a delayed undershoot response. Future work will implement a new velocity estimator to reduce this undesired undershoot.*
 
