@@ -1,0 +1,53 @@
+# config for robotic keyboard using Dynamixel U2D2 + X-series
+
+# USB communication
+port: 'COM3' # '/dev/xxx'
+baudrate: 3000000 # configure with Dynamixel Wizard
+
+# servo IDs and finger maps
+rh_ids: [101,102,103,104,105] # right hand Dynamixel IDs
+lh_ids: [201,202,203,204,205] # left hand Dynamixel IDs
+mirror_map_rh: 
+  101: 201
+  102: 202
+  103: 203
+  104: 204
+  105: 205
+mirror_map_lh: 
+  201: 101
+  202: 102
+  203: 103
+  204: 104
+  205: 105
+map_to_screen: [9,8,7,6,5,0,1,2,3,4] # map rh+lh to left-to-right
+
+# control and pressing logic
+stiff_params:
+  'P': 1000
+  'I': 100
+  'D': 1500
+  'current': 1750
+compliant_params:
+  'P': 150
+  'I': 0
+  'D': 400
+  'current': 200
+press_angle: 10.0 # angle from bottom-out, degrees
+velocity_gain: 0.15 # predictive gain, deg/rpm
+
+# list of valid commands
+commands: [
+  'shutdown',
+  'torque_on',
+  'torque_off',
+  'mode_idle_stiff',
+  'mode_idle_compliant',
+  'mode_action_normal_rh',
+  'mode_action_normal_lh',
+  'mode_action_mirror_rh',
+  'mode_action_mirror_lh',
+  'start_recording',
+  'stop_recording',
+  'start_delayed_replay_rh',
+  'start_delayed_replay_lh',
+  'stop_replay']
