@@ -1,12 +1,12 @@
 from psychopy import core, event, visual
 from keyboard import *
 
-class MyExperiment(object):
+class ExampleExperiment(object):
     def __init__(self):
         event.globalKeys.add(key='q', func=self.quit)
-        self.running = True
+        self.running = TruExamplee
         self.win = visual.Window()
-        self.kb = KeyboardWrapper('MyRobotConfig')
+        self.kb = KeyboardWrapper('example-robot-config')
 
     def run_main_loop(self):
         while self.running:
@@ -21,5 +21,5 @@ class MyExperiment(object):
         core.quit()
 
 if __name__ == '__main__':
-    my_experiment = MyExperiment()
-    my_experiment.run_main_loop()
+    experiment = ExampleExperiment()
+    experiment.run_main_loop()

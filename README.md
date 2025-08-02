@@ -50,7 +50,7 @@ Any Python script can be used to operate the robot. For example:
 from keyboard import *
 
 # start the keyboard process
-kb = KeyboardWrapper('MyRobotConfig')
+kb = KeyboardWrapper('example-robot-config')
 
 # set keyboard to mirror actions from right to left hand
 kb.send_command('mode_action_mirror_rh')
@@ -67,12 +67,12 @@ Or use it in a full PsychoPy experiment:
 from psychopy import core, event, visual
 from keyboard import *
 
-class MyExperiment(object):
+class ExampleExperiment(object):
     def __init__(self):
         event.globalKeys.add(key='q', func=self.quit)
         self.running = True
         self.win = visual.Window()
-        self.kb = KeyboardWrapper('MyRobotConfig')
+        self.kb = KeyboardWrapper('example-robot-config')
 
     def run_main_loop(self):
         while self.running:
@@ -87,11 +87,11 @@ class MyExperiment(object):
         core.quit()
 
 if __name__ == '__main__':
-    my_experiment = MyExperiment()
-    my_experiment.run_main_loop()
+    experiment = ExampleExperiment()
+    experiment.run_main_loop()
 ```
 
-Configuration of the robot is specified in `./config/MyRobotConfig.yml`. Use [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) software to initialize the ID and Baudrate for each motor. Common parameters such as PID gains or neutral angles for the virtual spring can also be found here.
+Configuration of the robot is specified in `./config/example-robot-config.yml`. Use [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) software to initialize the ID and Baudrate for each motor. Common parameters such as PID gains or neutral angles for the virtual spring can also be found here.
 
 *Ideally, the asynchronous operation of DYNAMIXEL motors will exist in a separate `async-dynamixel` library, with the application to sensorimotor neuroscience experiments as a separate project. For now, some care must be taken to ensure `config.yml` and `device.py` are compatible.*
 

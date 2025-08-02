@@ -65,7 +65,7 @@ LEN_SYNCWRITE         = 4*LEN_GAIN
 
 # keyboard class to run in parent process
 class KeyboardWrapper(object):
-    def __init__(self, config_fname='keyboard-replay'):
+    def __init__(self, config_fname='example-robot-config'):
         # load config
         self.config_dir = os.path.join('config',config_fname+'.yml')
         try:
