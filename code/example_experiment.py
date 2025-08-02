@@ -4,7 +4,7 @@ from keyboard import *
 class ExampleExperiment(object):
     def __init__(self):
         event.globalKeys.add(key='q', func=self.quit)
-        self.running = TruExamplee
+        self.running = True
         self.win = visual.Window()
         self.kb = KeyboardWrapper('example-robot-config')
 
